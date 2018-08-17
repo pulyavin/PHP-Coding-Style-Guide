@@ -125,14 +125,14 @@ $this
 
 Неправильный вариант:
 ```php
-$className = '\Name\Space\ClassName'
+$className = '\Name\Space\ClassName';
 ```
 
 Правильный вариант:
 ```php
 use \Name\Space\ClassName;
 
-$className = ClassName::class
+$className = ClassName::class;
 ```
 
 - Для конкатенации строк НЕОБХОДИМО использовать функцию [sprintf](http://php.net/manual/en/function.sprintf.php)
@@ -142,7 +142,7 @@ $className = ClassName::class
 $type = 'error';
 $message = 'Some problems occured';
 
-$exception = 'Exception ('.$type.'): ' . $message
+$exception = 'Exception ('.$type.'): ' . $message;
 ```
 
 Правильный вариант:
