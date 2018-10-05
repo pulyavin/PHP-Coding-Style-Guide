@@ -108,16 +108,14 @@ return false;
 
 Неправильный вариант:
 ```php
-$this
-    ->setFormatter()
+$this->setFormatter()
     ->setDelimeter()
 ;
 ```
 
 Правильный вариант:
 ```php
-$this
-    ->setFormatter()
+$this->setFormatter()
     ->setDelimeter();
 ```
 
@@ -1018,15 +1016,6 @@ class PaymentOrder
 }
 ```
 
-- При объединении методов в цепочку СЛЕДУЕТ каждый метод переносить на новую строку с отступом (четыре пробела)
-
-Пример:
-```php
-$this
-    ->setFormatter()
-    ->setDelimeter();
-```
-
 - Все методы сеттеры ДОЛЖНЫ возращать `$this` (fluent interface)
 
 Пример:
@@ -1071,6 +1060,28 @@ class Order
         return $this;
     }
 }
+```
+
+- При объединении методов в цепочку СЛЕДУЕТ каждый метод переносить на новую строку с отступом (четыре пробела).
+Метод отдающий fluent interface ДОЛЖЕН вызываться на первой строке.
+
+Неправильный вариант:
+```php
+$message = $this
+    ->getMessageBuilder()
+    ->setReceiver('user@localhost.lo)
+    ->setSubject('subject')
+    ->setMessage('message body')
+    ->build();
+```
+
+Правильный вариант:
+```php
+$message = $this->getMessageBuilder()
+    ->setReceiver('user@localhost.lo)
+    ->setSubject('subject')
+    ->setMessage('message body')
+    ->build();
 ```
 
 - Оператору `return` ДОЛЖНА предшествовать пустая линия, за исключением случая когда `return` единственная строка внутри управляющей структуры (например if, function)
