@@ -1069,7 +1069,7 @@ class Order
 ```php
 $message = $this
     ->getMessageBuilder()
-    ->setReceiver('user@localhost.lo)
+    ->setReceiver('user@localhost.lo')
     ->setSubject('subject')
     ->setMessage('message body')
     ->build();
@@ -1078,7 +1078,7 @@ $message = $this
 Правильный вариант:
 ```php
 $message = $this->getMessageBuilder()
-    ->setReceiver('user@localhost.lo)
+    ->setReceiver('user@localhost.lo')
     ->setSubject('subject')
     ->setMessage('message body')
     ->build();
