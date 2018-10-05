@@ -1067,15 +1067,21 @@ class Order
 
 Неправильный вариант:
 ```php
-$this
-    ->setFormatter()
-    ->setDelimeter();
+$message = $this
+    ->getMessageBuilder()
+    ->setReceiver('user@localhost.lo)
+    ->setSubject('subject')
+    ->setMessage('message body')
+    ->build();
 ```
 
 Правильный вариант:
 ```php
-$this->setFormatter()
-    ->setDelimeter();
+$message = $this->getMessageBuilder()
+    ->setReceiver('user@localhost.lo)
+    ->setSubject('subject')
+    ->setMessage('message body')
+    ->build();
 ```
 
 - Оператору `return` ДОЛЖНА предшествовать пустая линия, за исключением случая когда `return` единственная строка внутри управляющей структуры (например if, function)
